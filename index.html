@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-
 <body>
     <div class="row">
         <div class="card" onClick="OnCardSelect('00')">
@@ -15,7 +14,7 @@
             </div>
 
             <div class="card-content card-back" id="card-back-00">
-                <img id="cardBack00" alt="img" />
+                <img id="imgBack00" alt="img" />
             </div>
         </div>
 
@@ -176,82 +175,7 @@
         </div>
     </div>
 
-    <script>
-        // Generate random number
-        function getRandomInt(max) {
-            return Math.floor(Math.random() * max);
-        }
-
-        function onLoad() {
-            // let valuesArray = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7];
-
-            // const positionsValue = new Map();
-
-            // for (let i = 0; i < 4; i++) {
-            //     for (let j = 0; j < 4; j++) {
-            //         let key = i.toString() + j.toString();
-
-            //         var randomNumber = getRandomInt(8);
-            //         var index = valuesArray.indexOf(randomNumber);
-
-            //         while (index < 0) {
-            //             randomNumber = getRandomInt(8);
-            //             index = valuesArray.indexOf(randomNumber);
-            //         }
-
-            //         positionsValue[i][j] = randomNumber;
-            //         valuesArray.splice(index, 1);
-            //     }
-            // }
-
-            //document.getElementById("img00").src = "card_front.png";
-
-            for (let i = 0; i < 4; i++) {
-                for (let j = 0; j < 4; j++) {
-                    let key = i.toString() + j.toString();
-                    let searchId = "imgBack" + key;
-                    //let imageNumberString = positionsValue[i][j];
-                    let rand = getRandomInt(8);
-                    document.getElementById(searchId).src = "./" + rand + ".png";
-                    console.log("Random number generated is: ", rand);
-                }
-            }
-        }
-
-        //onLoad();
-
-        document.getElementById("imgBack01").src = "./1.png";
-        document.getElementById("card03").src = "./1.png";
-
-        // Function for adding 
-        function OnCardSelect(number) {
-            console.log(number);
-
-            var idFront = "card-front-" + number;
-            var idBack = "card-back-" + number;
-
-            document.getElementById(idFront).className += " card-front-clicked";
-            document.getElementById(idBack).className += " card-back-clicked";
-        }
-
-        const positionsValue = new Map();
-
-        function testFunc() {
-            var positionsIterator = 1;
-
-            while (positionsIterator <= 16) {
-                //let key = positionsIterator.ToString();
-                //let key = String(positionsIterator);
-                var randomNumber = getRandomInt(3);
-
-                positionsValue.set(positionsIterator, randomNumber);
-
-                positionsIterator++;
-            }
-        }
-
-        testFunc();
-    </script>
+    <script src="index.js" type="text/javascript"></script>
 
 </body>
 
