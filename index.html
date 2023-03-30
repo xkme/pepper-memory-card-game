@@ -93,7 +93,10 @@
 
 
     <script>
-        let randomNo = Math.floor(Math.random() * 10);
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", "https://catfact.ninja/fact", false); // false for synchronous request
+        xmlHttp.send(null);
+        console.log(xmlHttp.responseText);
 
         function rotateCard(cardNumber) {
 
