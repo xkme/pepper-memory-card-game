@@ -8,9 +8,16 @@
 
 <body>
     <div class="container">
-        <div class="test">TEST
+        <div class="test" id="card1" onClick="rotateCard()">TEST
         </div>
     </div>
+
+    <script>
+        function rotateCard() {
+            const card = document.getElementById("card1");
+            card.style.transform = "rotateY(180deg)";
+        }
+    </script>
 
 </body>
 
@@ -36,7 +43,7 @@
         position: absolute;
         top: 0px;
         left: 0px;
-        background: linear-gradient(to right, black, transparent);
+        background: no-repeat url("https://i.ibb.co/VQ7WwkW/2-100x100.png");
         transform: rotateY(180deg);
         transform-style: preserve-3d;
         backface-visibility: hidden;
@@ -45,9 +52,9 @@
         backface-visibility: hidden;
     }
 
-    .test:hover {
+    /* .test-clicked {
         transform: rotateY(180deg);
-    }
+    } */
 
     /* .container:hover .test {
         transform: rotateY(180deg);
