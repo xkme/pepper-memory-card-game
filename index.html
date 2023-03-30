@@ -240,8 +240,10 @@
                 //let rand = getRandomInt(8);
                 //document.getElementById(searchId).src = "./" + imageNumberString + ".png";
                 const urlPrefix = "https://raw.githubusercontent.com/xkme/pepper-memory-card-game/main/";
-                document.getElementById('cardBack' + key).style.backgroundImage = "url('" + urlPrefix + imageNumberString + "_100x100.png')";
+                const imageURL = "url('" + urlPrefix + imageNumberString + "_100x100.png')";
+                document.getElementById('cardBack' + key).style.backgroundImage = imageURL;
                 console.log("Random number generated is: ", imageNumberString);
+                console.log(imageURL);
             }
         }
 
