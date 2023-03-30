@@ -237,8 +237,12 @@
             var idFront = "card-front-" + number;
             var idBack = "card-back-" + number;
 
-            document.getElementById(idFront).className += " card-front-clicked";
-            document.getElementById(idBack).className += " card-back-clicked";
+            const selectedCard = document.getElementById(idFront);
+
+            // document.getElementById(idFront).className += " card-front-clicked";
+            // document.getElementById(idBack).className += " card-back-clicked";
+
+            selectedCard.style.transform = "rotateY(-180deg)";
         }
 
         const positionsValue = new Map();
