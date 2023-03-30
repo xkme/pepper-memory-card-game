@@ -14,17 +14,17 @@
 
         <div class="test" id="card01" onClick="rotateCard('01')">TEST
         </div>
-        <div class="test-backside" id="cardBack00">TEST
+        <div class="test-backside" id="cardBack01">TEST
         </div>
 
         <div class="test" id="card02" onClick="rotateCard('02')">TEST
         </div>
-        <div class="test-backside" id="cardBack00">TEST
+        <div class="test-backside" id="cardBack02">TEST
         </div>
 
         <div class="test" id="card03" onClick="rotateCard('03')">TEST
         </div>
-        <div class="test-backside" id="cardBack00">TEST
+        <div class="test-backside" id="cardBack03">TEST
         </div>
     </div>
     <div class="container">
@@ -56,38 +56,38 @@
 
         <div class="test" id="card21" onClick="rotateCard('21')">TEST
         </div>
-        <div class="test-backside" id="cardBack00" onClick="rotateCard('00')">TEST
+        <div class="test-backside" id="cardBack00">TEST
         </div>
 
         <div class="test" id="card22" onClick="rotateCard('22')">TEST
         </div>
-        <div class="test-backside" id="cardBack00" onClick="rotateCard('00')">TEST
+        <div class="test-backside" id="cardBack00">TEST
         </div>
 
         <div class="test" id="card23" onClick="rotateCard('23')">TEST
         </div>
-        <div class="test-backside" id="cardBack00" onClick="rotateCard('00')">TEST
+        <div class="test-backside" id="cardBack00">TEST
         </div>
     </div>
     <div class="container">
         <div class="test" id="card30" onClick="rotateCard('30')">TEST
         </div>
-        <div class="test-backside" id="cardBack00" onClick="rotateCard('00')">TEST
+        <div class="test-backside" id="cardBack00">TEST
         </div>
 
         <div class="test" id="card31" onClick="rotateCard('31')">TEST
         </div>
-        <div class="test-backside" id="cardBack00" onClick="rotateCard('00')">TEST
+        <div class="test-backside" id="cardBack00">TEST
         </div>
 
         <div class="test" id="card32" onClick="rotateCard('32')">TEST
         </div>
-        <div class="test-backside" id="cardBack00" onClick="rotateCard('00')">TEST
+        <div class="test-backside" id="cardBack00">TEST
         </div>
 
         <div class="test" id="card33" onClick="rotateCard('33')">TEST
         </div>
-        <div class="test-backside" id="cardBack00" onClick="rotateCard('00')">TEST
+        <div class="test-backside" id="cardBack00">TEST
         </div>
     </div>
 
@@ -95,7 +95,10 @@
     <script>
         function rotateCard(cardNumber) {
             const card = document.getElementById("card" + cardNumber);
-            card.style.transform = "rotateY(180deg)";
+            card.style.transform = "rotateY(90deg)";
+
+            const cardBack = document.getElementById("cardBack" + cardNumber);
+            cardBack.style.transform = "rotateY(0deg)";
         }
     </script>
 
@@ -109,11 +112,11 @@
         left: 30px;
         top: 30px;
         background-color: lightgreen;
-        transition: all 0.75s linear;
+        transition: all 0.3s linear;
         transform-style: preserve-3d;
-        backface-visibility: hidden;
+        /* backface-visibility: hidden; */
         -webkit-transform-style: preserve-3d;
-        -webkit-backface-visibility: hidden;
+        /* -webkit-backface-visibility: hidden; */
         margin-top: 40px;
         z-index: 1;
     }
@@ -126,11 +129,13 @@
         top: 30px;
         margin-left: -376px;
         background-color: rgb(147, 11, 225);
-        transition: all 0.75s linear;
-        transform-style: preserve-3d;
-        backface-visibility: hidden;
-        -webkit-transform-style: preserve-3d;
-        -webkit-backface-visibility: hidden;
+        transform: rotateY(90deg);
+        transition: all 0.3s linear;
+        transition-delay: 0.3s;
+        /* transform-style: preserve-3d; */
+        /* backface-visibility: hidden; */
+        /* -webkit-transform-style: preserve-3d; */
+        /* -webkit-backface-visibility: hidden; */
         margin-top: 40px;
     }
 
