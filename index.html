@@ -239,7 +239,8 @@
                 let imageNumberString = positionsValue[i][j];
                 //let rand = getRandomInt(8);
                 //document.getElementById(searchId).src = "./" + imageNumberString + ".png";
-                document.getElementById('cardBack' + key).style.backgroundImage = "url('" + imageNumberString + "_100x100.png')";
+                const urlPrefix = "https://raw.githubusercontent.com/xkme/pepper-memory-card-game/main/";
+                document.getElementById('cardBack' + key).style.backgroundImage = "url('" + urlPrefix + imageNumberString + "_100x100.png')";
                 console.log("Random number generated is: ", imageNumberString);
             }
         }
