@@ -2,12 +2,17 @@
 <html>
 
 <body>
-    <div class="rectangle" onclick="rotate()"></div>
+    <div style="display:flex">
+        <div class="square" id="square1" onclick="rotate('1')"></div>
+        <div class="square" id="square2" onclick="rotate('2')"></div>
+        <div class="square" id="square3" onclick="rotate('3')"></div>
+        <div class="square" id="square4" onclick="rotate('4')"></div>
+    </div>
 
     <style>
-        .rectangle {
+        .square {
             position: relative;
-            margin: 60px;
+            margin: 20px;
             width: 90px;
             height: 90px;
             background-color: #24ddff;
@@ -16,15 +21,12 @@
     </style>
 
     <script>
-        var count = 0;
-        const div = document.querySelector('div')
-
-        function rotate() {
-            count++;
-            var deg = count * 30;
+        function rotate(squareNumber) {
+            const square = document.getElementById("square" + squareNumber)
             //div.style.transform = "rotateY(" + deg + "deg)";
-            div.style.transform = "rotateY(-180deg)";
-            div.style.transitionDuration = "2s";
+            square.style.transform = "rotateY(-180deg)";
+            square.style.transitionDuration = "2s";
+            console.log(square)
         }
     </script>
 
