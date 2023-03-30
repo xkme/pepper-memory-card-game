@@ -1,33 +1,248 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="./index.css">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
 <body>
-    <div style="display:flex">
-        <div class="square" id="square1" onclick="rotate('1')"></div>
-        <div class="square" id="square2" onclick="rotate('2')"></div>
-        <div class="square" id="square3" onclick="rotate('3')"></div>
-        <div class="square" id="square4" onclick="rotate('4')"></div>
+    <div class="row">
+        <div class="card" onClick="OnCardSelect('00')">
+            <div class="card-content card-front" id="card-front-00">
+                <img alt="Dog" src="card_front.png" id="card00" />
+            </div>
+
+            <div class="card-content card-back" id="card-back-00">
+                <img id="imgBack00" alt="img" />
+            </div>
+        </div>
+
+        <div class="card" onClick="OnCardSelect('01')">
+            <div class="card-content card-front" id="card-front-01">
+                <img src="card_front.png" alt="Dog" />
+            </div>
+
+            <div class="card-content card-back" id="card-back-01">
+                <img id="imgBack01" alt="img" />
+            </div>
+        </div>
+
+        <div class="card" onClick="OnCardSelect('02')">
+            <div class="card-content card-front" id="card-front-02">
+                <img src="card_front.png" alt="Dog" />
+            </div>
+
+            <div class="card-content card-back" id="card-back-02">
+                <img id="imgBack02" alt="img" />
+            </div>
+        </div>
+
+        <div class="card" onClick="OnCardSelect('03')">
+            <div class="card-content card-front" id="card-front-03">
+                <img src="card_front.png" id="card03" alt="Dog" />
+            </div>
+
+            <div class="card-content card-back" id="card-back-03">
+                <img id="imgBack03" alt="img" />
+            </div>
+        </div>
     </div>
 
-    <style>
-        .square {
-            position: relative;
-            margin: 20px;
-            width: 90px;
-            height: 90px;
-            background-color: #24ddff;
-            transition-duration: 500ms;
-        }
-    </style>
+    <div class="row">
+        <div class="card" onClick="OnCardSelect('10')">
+            <div class="card-content card-front" id="card-front-10">
+                <img src="card_front.png" alt="Dog" />
+            </div>
 
+            <div class="card-content card-back" id="card-back-10">
+                <img id="imgBack10" alt="img" />
+            </div>
+        </div>
+
+        <div class="card" onClick="OnCardSelect('11')">
+            <div class="card-content card-front" id="card-front-11">
+                <img src="card_front.png" alt="Dog" />
+            </div>
+
+            <div class="card-content card-back" id="card-back-11">
+                <img id="imgBack11" alt="img" />
+            </div>
+        </div>
+
+        <div class="card" onClick="OnCardSelect('12')">
+            <div class="card-content card-front" id="card-front-12">
+                <img src="card_front.png" alt="Dog" />
+            </div>
+
+            <div class="card-content card-back" id="card-back-12">
+                <img id="imgBack12" alt="img" />
+            </div>
+        </div>
+        <div class="card" onClick="OnCardSelect('13')">
+            <div class="card-content card-front" id="card-front-13">
+                <img src="card_front.png" alt="Dog" />
+            </div>
+
+            <div class="card-content card-back" id="card-back-13">
+                <img id="imgBack13" alt="img" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="card" onClick="OnCardSelect('20')">
+            <div class="card-content card-front" id="card-front-20">
+                <img src="card_front.png" alt="Dog" />
+            </div>
+
+            <div class="card-content card-back" id="card-back-20">
+                <img id="imgBack20" alt="img" />
+            </div>
+        </div>
+
+        <div class="card" onClick="OnCardSelect('21')">
+            <div class="card-content card-front" id="card-front-21">
+                <img src="card_front.png" alt="Dog" />
+            </div>
+
+            <div class="card-content card-back" id="card-back-21">
+                <img id="imgBack21" alt="img" />
+            </div>
+        </div>
+
+        <div class="card" onClick="OnCardSelect('22')">
+            <div class="card-content card-front" id="card-front-22">
+                <img src="card_front.png" alt="Dog" />
+            </div>
+
+            <div class="card-content card-back" id="card-back-22">
+                <img id="imgBack22" alt="img" />
+            </div>
+        </div>
+
+        <div class="card" onClick="OnCardSelect('23')">
+            <div class="card-content card-front" id="card-front-23">
+                <img src="card_front.png" alt="Dog" />
+            </div>
+
+            <div class="card-content card-back" id="card-back-23">
+                <img id="imgBack23" alt="img" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="card" onClick="OnCardSelect('30')">
+            <div class="card-content card-front" id="card-front-30">
+                <img src="card_front.png" alt="Dog" />
+            </div>
+
+            <div class="card-content card-back" id="card-back-30">
+                <img id="imgBack30" alt="img" />
+            </div>
+        </div>
+
+        <div class="card" onClick="OnCardSelect('31')">
+            <div class="card-content card-front" id="card-front-31">
+                <img src="card_front.png" alt="Dog" />
+            </div>
+
+            <div class="card-content card-back" id="card-back-31">
+                <img id="imgBack31" alt="img" />
+            </div>
+        </div>
+
+        <div class="card" onClick="OnCardSelect('32')">
+            <div class="card-content card-front" id="card-front-32">
+                <img src="card_front.png" alt="Dog" />
+            </div>
+
+            <div class="card-content card-back" id="card-back-32">
+                <img id="imgBack32" alt="img" />
+            </div>
+        </div>
+
+        <div class="card" onClick="OnCardSelect('33')">
+            <div class="card-content card-front" id="card-front-33">
+                <img src="card_front.png" alt="Dog" />
+            </div>
+
+            <div class="card-content card-back" id="card-back-33">
+                <img id="imgBack33" alt="img" />
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <script src="index.js" type="text/javascript"></script> -->
     <script>
-        function rotate(squareNumber) {
-            const square = document.getElementById("square" + squareNumber)
-            //div.style.transform = "rotateY(" + deg + "deg)";
-            square.style.transform = "rotateY(-180deg)";
-            square.style.transitionDuration = "2s";
-            console.log(square)
+        // Generate random number
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
         }
+
+        function onLoad() {
+            let valuesArray = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7];
+
+            const positionsValue = new Map();
+
+            for (let i = 0; i < 4; i++) {
+                for (let j = 0; j < 4; j++) {
+                    let key = i.toString() + j.toString();
+
+                    var randomNumber = getRandomInt(8);
+                    var index = valuesArray.indexOf(randomNumber);
+
+                    while (index < 0) {
+                        randomNumber = getRandomInt(8);
+                        index = valuesArray.indexOf(randomNumber);
+                    }
+
+                    positionsValue[i][j] = randomNumber;
+                    valuesArray.splice(index, 1);
+                }
+            }
+
+            //document.getElementById("img00").src = "card_front.png";
+
+            for (let i = 0; i < 4; i++) {
+                for (let j = 0; j < 4; j++) {
+                    let key = i.toString() + j.toString();
+                    let searchId = "imgBack" + key;
+                    let imageNumberString = positionsValue[i][j];
+                    //let rand = getRandomInt(8);
+                    document.getElementById(searchId).src = "./" + imageNumberString + ".png";
+                    console.log("Random number generated is: ", imageNumberString);
+                }
+            }
+        }
+
+        //onLoad();
+
+        //document.getElementById("imgBack01").src = "./1.png";
+        for (let i = 0; i < 4; i++) {
+            for (let j = 0; j < 4; j++) {
+                let key = i.toString() + j.toString();
+                let searchId = "imgBack" + key;
+                imageNumberString = getRandomInt(8);
+                document.getElementById(searchId).src = "./" + imageNumberString + ".png";
+            }
+        }
+
+        // Function for adding 
+        function OnCardSelect(number) {
+            console.log(number);
+
+            var idFront = "card-front-" + number;
+            var idBack = "card-back-" + number;
+
+            document.getElementById(idFront).className += " card-front-clicked";
+            document.getElementById(idBack).className += " card-back-clicked";
+        }
+
+        const positionsValue = new Map();
+
     </script>
 
 </body>
