@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="./index.css">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,53 +9,85 @@
     <div class="container">
         <div class="test" id="card00" onClick="rotateCard('00')">TEST
         </div>
+        <div class="test-backside" id="cardBack00">TEST
+        </div>
 
         <div class="test" id="card01" onClick="rotateCard('01')">TEST
+        </div>
+        <div class="test-backside" id="cardBack00">TEST
         </div>
 
         <div class="test" id="card02" onClick="rotateCard('02')">TEST
         </div>
+        <div class="test-backside" id="cardBack00">TEST
+        </div>
 
         <div class="test" id="card03" onClick="rotateCard('03')">TEST
+        </div>
+        <div class="test-backside" id="cardBack00">TEST
         </div>
     </div>
     <div class="container">
         <div class="test" id="card10" onClick="rotateCard('10')">TEST
         </div>
+        <div class="test-backside" id="cardBack00">TEST
+        </div>
 
-        <div class="test" id="card11" onClick="rotateCard('11')">TEST
+        <div class="test2" id="card11" onClick="rotateCard('11')">TEST
+        </div>
+        <div class="test-backside" id="cardBack00">TEST
         </div>
 
         <div class="test" id="card12" onClick="rotateCard('12')">TEST
         </div>
+        <div class="test-backside" id="cardBack00">TEST
+        </div>
 
         <div class="test" id="card13" onClick="rotateCard('13')">TEST
+        </div>
+        <div class="test-backside" id="cardBack00">TEST
         </div>
     </div>
     <div class="container">
         <div class="test" id="card20" onClick="rotateCard('20')">TEST
         </div>
+        <div class="test-backside" id="cardBack00">TEST
+        </div>
 
         <div class="test" id="card21" onClick="rotateCard('21')">TEST
+        </div>
+        <div class="test-backside" id="cardBack00" onClick="rotateCard('00')">TEST
         </div>
 
         <div class="test" id="card22" onClick="rotateCard('22')">TEST
         </div>
+        <div class="test-backside" id="cardBack00" onClick="rotateCard('00')">TEST
+        </div>
 
         <div class="test" id="card23" onClick="rotateCard('23')">TEST
+        </div>
+        <div class="test-backside" id="cardBack00" onClick="rotateCard('00')">TEST
         </div>
     </div>
     <div class="container">
         <div class="test" id="card30" onClick="rotateCard('30')">TEST
         </div>
+        <div class="test-backside" id="cardBack00" onClick="rotateCard('00')">TEST
+        </div>
 
         <div class="test" id="card31" onClick="rotateCard('31')">TEST
+        </div>
+        <div class="test-backside" id="cardBack00" onClick="rotateCard('00')">TEST
         </div>
 
         <div class="test" id="card32" onClick="rotateCard('32')">TEST
         </div>
+        <div class="test-backside" id="cardBack00" onClick="rotateCard('00')">TEST
+        </div>
 
         <div class="test" id="card33" onClick="rotateCard('33')">TEST
+        </div>
+        <div class="test-backside" id="cardBack00" onClick="rotateCard('00')">TEST
         </div>
     </div>
 
@@ -84,9 +115,26 @@
         -webkit-transform-style: preserve-3d;
         -webkit-backface-visibility: hidden;
         margin-top: 40px;
+        z-index: 1;
     }
 
-    .test:after {
+    .test-backside {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        left: 30px;
+        top: 30px;
+        margin-left: -376px;
+        background-color: rgb(147, 11, 225);
+        transition: all 0.75s linear;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        -webkit-transform-style: preserve-3d;
+        -webkit-backface-visibility: hidden;
+        margin-top: 40px;
+    }
+
+    /* .test:after {
         content: '';
         right: 0px;
         bottom: 0px;
@@ -94,6 +142,37 @@
         top: 0px;
         left: 0px;
         background: no-repeat url("2_100x100.png");
+        transform: rotateY(180deg);
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+    } */
+
+    .test2 {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        left: 30px;
+        top: 30px;
+        background-color: lightgreen;
+        transition: all 0.75s linear;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        -webkit-transform-style: preserve-3d;
+        -webkit-backface-visibility: hidden;
+        margin-top: 40px;
+        z-index: -1;
+    }
+
+    .test2:after {
+        content: '';
+        right: 0px;
+        bottom: 0px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
         transform: rotateY(180deg);
         transform-style: preserve-3d;
         backface-visibility: hidden;
@@ -115,5 +194,58 @@
         justify-content: space-around;
     }
 </style>
+
+<script>
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+
+    function onLoad() {
+        let valuesArray = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7];
+
+        const positionsValue = [
+            [-1, -1, -1, -1],
+            [-1, -1, -1, -1],
+            [-1, -1, -1, -1],
+            [-1, -1, -1, -1],
+        ]
+
+        for (let i = 0; i < 4; i++) {
+            for (let j = 0; j < 4; j++) {
+                let key = i.toString() + j.toString();
+
+                var randomNumber = getRandomInt(8);
+                var index = valuesArray.indexOf(randomNumber);
+
+                while (index < 0) {
+                    randomNumber = getRandomInt(8);
+                    index = valuesArray.indexOf(randomNumber);
+                }
+
+                positionsValue[i][j] = randomNumber;
+                valuesArray.splice(index, 1);
+            }
+        }
+
+        //document.getElementById("img00").src = "card_front.png";
+
+        for (let i = 0; i < 4; i++) {
+            for (let j = 0; j < 4; j++) {
+                let key = i.toString() + j.toString();
+                let searchId = "imgBack" + key;
+                let imageNumberString = positionsValue[i][j];
+                //let rand = getRandomInt(8);
+                // document.getElementById(searchId).src = "./" + imageNumberString + ".png";
+                console.log("Random number generated is: ", imageNumberString);
+            }
+        }
+
+        //document.getElementById("card11").style.background = "url('1_100x100.png')";
+        document.getElementById('card11').style.backgroundImage = "url('1_100x100.png')";
+    }
+
+    onLoad();
+
+</script>
 
 </html>
