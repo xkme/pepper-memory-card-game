@@ -2,8 +2,7 @@
 <html>
 
 <body>
-    <button onclick="rotat()">Rotate</button>
-    <div class="rectangle"></div>
+    <div class="rectangle" onclick="rotate()"></div>
 
     <style>
         .rectangle {
@@ -11,7 +10,7 @@
             margin: 60px;
             width: 90px;
             height: 90px;
-            border: 5px solid #24ddff;
+            background-color: #24ddff;
             transition-duration: 500ms;
         }
     </style>
@@ -20,10 +19,12 @@
         var count = 0;
         const div = document.querySelector('div')
 
-        function rotat() {
+        function rotate() {
             count++;
             var deg = count * 30;
-            div.style.transform = "rotate(" + deg + "deg)";
+            //div.style.transform = "rotateY(" + deg + "deg)";
+            div.style.transform = "rotateY(-180deg)";
+            div.style.transitionDuration = "2s";
         }
     </script>
 
